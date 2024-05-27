@@ -1,0 +1,4 @@
+file mki2c.lja /bin/mki2c.lja
+file mki2c.py /bin/mki2c.py
+file rmi2c.lja /bin/rmi2c.lja
+file rmi2c.py /bin/rmi2c.py
