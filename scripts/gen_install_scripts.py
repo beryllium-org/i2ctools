@@ -72,7 +72,6 @@ def mk_scripts(data: list) -> None:
 
     signoff = 'be.api.setvar("return", "0")\n'
     inst += signoff
-    strap += signoff
     uninst += signoff
 
     with open("files/installer.py", "w") as f:
