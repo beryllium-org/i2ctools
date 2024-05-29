@@ -50,7 +50,7 @@ def mk_scripts(data: list) -> None:
         elif i[0] == "file":
             inst += 'be.based.run("cp ' + i[1] + " " + i[2] + '")\n'
             strap += (
-                'shutil.copy("' + i[1] + '", path.join(root, "' + i[2][1:] + '"))\n'
+                'shutil.copyfile("' + i[1] + '", path.join(root, "' + i[2][1:] + '"))\n'
             )
             if not sent_rml:
                 sent_rml = True
