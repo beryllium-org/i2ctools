@@ -5,7 +5,12 @@ vr("scl", None)
 vr("sda", None)
 
 if "b" in vr("opts")["o"] or "board" in vr("opts")["o"]:
-    vr("i2cbus", be.devices["gpiochip"][0].pin("I2C", force=True)())
+    vr("board_bus", "I2C")
+    if "b" in vr("opts")["o"] and vr("opts")["o"]["b"] is not None:
+        vr("board_bus", vr("opts")["o"]["b"])
+    if "board" in vr("opts")["o"] and vr("opts")["o"]["board"] is not None:
+        vr("board_bus", vr("opts")["o"]["board"])
+    vr("i2cbus", be.devices["gpiochip"][0].pin(vr("board_bus"), force=True)())
 elif "d" in vr("opts")["o"] and "c" in vr("opts")["o"]:
     vr("scl", vr("opts")["o"]["c"])
     vr("sda", vr("opts")["o"]["d"])
