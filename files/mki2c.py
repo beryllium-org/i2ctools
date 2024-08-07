@@ -29,4 +29,5 @@ if vr("i2cbus"):
     vr("node", be.api.getvar("return"))
     be.api.subscript("/bin/stringproccessing/devid.py")
     be.devices["i2c"][vr("dev_id")] = vr("i2cbus")
+    dmtex("I2C bus registered at /dev/i2c" + vr("dev_id"))
     be.api.setvar("return", "0")
