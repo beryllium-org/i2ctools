@@ -25,8 +25,10 @@ if vr("scl"):
 
 be.api.setvar("return", "1")
 if vr("i2cbus"):
-    be.based.run("mknod i2c")
-    vr("node", be.api.getvar("return"))
+    be.api.setvar("argj", "mknod i2c")
+    be.api.subscript("/bin/mknod.py")
+    vr("node", be.api.getvar("out"))
+    be.api.setvar("out", None)
     be.api.subscript("/bin/stringproccessing/devid.py")
     be.devices["i2c"][vr("dev_id")] = vr("i2cbus")
     dmtex("I2C bus registered at /dev/i2c" + str(vr("dev_id")))
