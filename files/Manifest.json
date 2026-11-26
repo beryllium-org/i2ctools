@@ -1,7 +1,7 @@
 {
     "JPKG_minimum_version": 2,
     "package_name": "i2ctools",
-    "version": [1, 0, 2],
+    "version": [1, 0, 3],
     "dependencies": [],
     "conflicts": [],
     "install": "installer.py",
